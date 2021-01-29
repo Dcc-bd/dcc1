@@ -8,14 +8,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 </style>
 <body>
 
-
-  
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -91,6 +102,12 @@ body {font-family: "Lato", sans-serif}
   </a>
 </div>
 
+
+
+
+
+
+
   <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
     <h2 class="w3-wide">Welcome The (>DCC<) </h2>
@@ -130,6 +147,57 @@ body {font-family: "Lato", sans-serif}
       </div>
     </div>
   </div>
+
+
+<!-- counter section -->
+
+<hr id="Count">
+
+<body class="Limon123">
+  <div class="container counter-section">
+    <div class="row text-center">
+      <div class="col-md-3 counter-box">
+        <div class="icon-box"><i class="fa fa-eye"></i></div>
+        <p class="counter">257</p>
+        <p>Online</p>
+      </div>
+      <div class="col-md-3 counter-box">
+        <div class="icon-box"><i class="fa fa-users"></i></div>
+        <p class="counter">1397</p>
+        <p>Users Visit</p>
+      </div>
+
+      <div class="col-md-3 counter-box">
+        <div class="icon-box"><i class="fa fa-heart"></i></div>
+        <p class="counter">850</p>
+        <p>users Like</p>
+      </div>
+
+      <div class="col-md-3 counter-box">
+        <div class="icon-box"><i class="fa fa-bicycle"></i></div>
+        <p class="counter">150</p>
+        <p>Membership</p>
+      </div>
+     
+
+    </div>
+  </div>
+</body>
+
+<!-- counter section spc -->
+<script src="js/jquery.counterup.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script>
+  jQuery(document).ready(function( $ )
+  {
+      $('.counter').counterUp({
+      delay: 50,
+      time: 3000
+       });
+
+       });
+</script>
+
 
 
   <!-- The Tour Section -->
@@ -296,6 +364,10 @@ window.onclick = function(event) {
 
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About DCC</a>
 
+  <a href="#calculator" onclick="w3_close()" class="w3-bar-item w3-button">Calculator</a>
+
+  <a href="#Count" onclick="w3_close()" class="w3-bar-item w3-button">Auto Counter</a>
+
   <a href="https://www.facebook.com/groups/645348796187238" onclick="w3_close()" class="w3-bar-item w3-button">Join us</a>
 
   <a href="https://www.facebook.com/DCCbangladesh2020" onclick="w3_close()" class="w3-bar-item w3-button">Support</a>
@@ -397,10 +469,110 @@ window.onclick = function(event) {
   </div>
   <hr>
   
+<!-- calculatot -->
+<hr id="calculator">
+<html> 
+<head> 
+  <script> 
+    //function that display value 
+    function dis(val) 
+    { 
+      document.getElementById("result").value+=val 
+    } 
+    
+    //function that evaluates the digit and return result 
+    function solve() 
+    { 
+      let x = document.getElementById("result").value 
+      let y = eval(x) 
+      document.getElementById("result").value = y 
+    } 
+    
+    //function that clear the display 
+    function clr() 
+    { 
+      document.getElementById("result").value = "" 
+    } 
+  </script> 
+
+
+  <!-- for styling -->
+  <style> 
+    .title{ 
+    margin-bottom: 10px; 
+    text-align:center; 
+    width: 210px; 
+    color:green; 
+    border: solid black 2px; 
+    } 
+
+    input[type="button"] 
+    { 
+    background-color:green; 
+    color: black; 
+    border: solid black 2px; 
+    width:100% 
+    } 
+
+    input[type="text"] 
+    { 
+    background-color:white; 
+    border: solid black 2px; 
+    width:100% 
+    } 
+  </style> 
+</head> 
+
+
+<!-- create table -->
+<body> 
+  <div class = title>Dhaka Cyclist Club (>DCC<) </div> 
+  <table border="1" class="margin"> 
+    <tr> 
+      <td colspan="3"><input type="text" id="result"/></td> 
+      <!-- clr() function will call clr to clear all value -->
+      <td><input type="button" value="c" onclick="clr()"/> </td> 
+    </tr> 
+    <tr> 
+      <!-- create button and assign value to each button -->
+      <!-- dis("1") will call function dis to display value -->
+      <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+      <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+      <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+      <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+    </tr> 
+    <tr> 
+      <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+      <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+      <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+      <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+    </tr> 
+    <tr> 
+      <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+      <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+      <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+      <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+    </tr> 
+    <tr> 
+      <td><input type="button" value="." onclick="dis('.')"/> </td> 
+      <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+      <!-- solve function call function solve to evaluate value -->
+      <td><input type="button" value="=" onclick="solve()"/> </td> 
+      <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+    </tr> 
+  </table> 
+</body> 
+</html> 
 
 
 
+<!-- calculator end -->
 
+<!-- extra -->
+
+
+
+<!-- claculator end -->
   <hr id="Registration code">
 
   <!-- Footer -->
